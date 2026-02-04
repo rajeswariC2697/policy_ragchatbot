@@ -33,9 +33,31 @@ source .venv/bin/activate #macos
 
 ## Install the dependencies 
 pip install -r requirements.txt
+
+while installing the hugging face conflicts in different os versions use
+## huggingface_hub>=0.33.4,<1.0.0
+
 ## start the server
  python main.py
-##  I bind to `127.0.0.1` for local development. 
- For deployment or Docker, I bind to `0.0.0.0` so the service is reachable externally.
- 
+## Access the application 
+http://127.0.0.1:8001/docs
+## Host Binding Notes
+127.0.0.1 is used for local development
+0.0.0.0 is used for Docker or deployment so the service is accessible externally
+
+## If dependency conflicts occur (for example when using pip freeze), install only the top-level libraries below:
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-core
+langchain-huggingface
+langchain-google-genai
+langchain-text-splitters
+faiss-cpu
+pydantic
+pydantic-settings
+python-dotenv
+numpy
+requests
 
